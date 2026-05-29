@@ -3,67 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Kay and Kay Student Living</title>
-    <style>
-        body {
-            font-family: Aptos,sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-        .contact-container {
-            max-width: 600px;
-            margin:50px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        h2 {
-            color: blue;
-            text-align: center;
-        }
-        label {
-            display: block;
-            margin-top: 15px;
-            font-weight: bold;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid  #ccc;
-            border-radius: 5px;
-            box-sizing: border-box; /*Ensures padding doesn't break width */
-        }
-        button {
-            width: 100%;
-            padding: 12px;
-            background-color: blue;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover{
-            background-color: blue;
-        }
-    </style>
+    <title>Contact Us | Kay and Kay Student Living</title>
+    <link rel="stylesheet" href="styles.css/style.css">
 </head>
 <body>
+
+    <header>
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team today</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contract.html">Contact Us</a>
+    </nav>
+
     <div class="contact-container">
-        <h2>Get In Touch</h2>
-        <p style="text-align: center;">Have a question? Send us a message and we'll get back to you.</p>
-        <form>
+        <h2 style="text-align: center;">Get In Touch</h2>
+        <p style="text-align: center; margin-bottom: 25px;">Have a question about our rooms or want to book a viewing? Drop us a message below.</p>
+        
+        <form action="#">
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Enter your name"required>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            
             <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="student@example.com"required>
+            <input type="email" id="email" placeholder="student@example.com" required>
+            
             <label for="message">How can we help?</label>
-            <textarea id="message" rows="5" placeholder="Tell us about your housing needs..."></textarea>
-            <button type="submit">Sumbmit Inquiry</button>
+            <textarea id="message" rows="5" placeholder="Tell us about your housing needs or which institution you are studying at..." required></textarea>
+            
+            <button type="submit">Submit Inquiry</button>
         </form>
     </div>
+
+    <footer>
+        <p>Copyright 2026 - Kay and Kay Student Accommodation - Cape Town</p>
+    </footer>
+
 </body>
 </html>
