@@ -290,3 +290,7 @@ footer {
         grid-template-columns: repeat(4, 1fr);
     }
 }
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid white; /* Adds an underline to the current page link */
+}

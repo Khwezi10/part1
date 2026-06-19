@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Kay and Kay Student Living</title>
+    <link rel="stylesheet" href="styles.css/style.css">
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script src="JavaScript/email.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team today</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="contact-container">
+        <h2 style="text-align: center;">Get In Touch</h2>
+        <p style="text-align: center; margin-bottom: 25px;">Have a question about our rooms or want to book a viewing? Drop us a message below.</p>
+        
+        <form action="#" id="contactForm" novalidate>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="student@example.com" required>
+            
+            <label for="message">How can we help?</label>
+            <textarea id="message" rows="5" placeholder="Tell us about your housing needs or which institution you are studying at..." required></textarea>
+            
+            <button type="submit">Submit Inquiry</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright 2026 - Kay and Kay Student Accommodation - Cape Town</p>
+    </footer>
+
+</body>
+</html>

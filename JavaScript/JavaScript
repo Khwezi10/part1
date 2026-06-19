@@ -1,0 +1,77 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+    // ==========================================
+    // FEATURE 1: SEND EMAIL FROM CONTACT FORM
+    // ==========================================
+    const contactForm = document.querySelector('form');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', (event) => {
+            // We do NOT block the event default here because we want the mailto link to trigger
+            
+            // Get user inputs from your form
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const message = contactForm.querySelector('textarea').value;
+
+            // Define your student accommodation email address here
+            const businessEmail = "kayandkay@emails.com";
+         // Change this to your real email address
+            
+            // Create email subject and body text
+            const subject = encodeURIComponent(`New Inquiry from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+            // Automatically open the user's email client (like Outlook or Gmail) with the details filled in
+            contactForm.action = `mailto:${businessEmail}?subject=${subject}&body=${body}`;
+        });
+    }
+
+    // ==========================================
+    // FEATURE 2: CLICK TO ENLARGE PICTURES (Modal)
+    // ==========================================
+    // Create the overlay elements purely in JS so you don't mess up your HTML files
+    const modal = document.createElement('div');
+    modal.id = 'imageModal';
+    // Basic essential styling for the pop-up background
+    Object.assign(modal.style, {
+        position: 'fixed', top: '0', left: '0', width: '100%', height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)', display: 'none', justifyContent: 'center',
+        alignItems: 'center', zIndex: '1000', cursor: 'zoom-out'
+    });
+
+    const modalImg = document.createElement('img');
+    Object.assign(modalImg.style, {
+        maxWidth: '85%', maxHeight: '85%', borderRadius: '8px', 
+        border: '3px solid white', boxShadow: '0px 4px 15px rgba(0,0,0,0.5)'
+    });
+    
+    modal.appendChild(modalImg);
+    document.body.appendChild(modal);
+
+    // Find all images inside your content cards/accommodation sections
+    const accommodationImages = document.querySelectorAll('.accommodation img, .services img, main img');
+
+    accommodationImages.forEach(img => {
+        img.style.cursor = 'zoom-in'; // Changes mouse cursor to a magnifying glass look
+        img.addEventListener('click', () => {
+            modalImg.src = img.src; // Copy clicked image source to pop-up image
+            modal.style.display = 'flex'; // Show it
+        });
+    });
+
+    // Close the big picture when clicked anywhere
+    modal.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // ==========================================
+    // FEATURE 3: COOL & SIMPLE BEGINNER EFFECT (Hover Navbar)
+    // ==========================================
+    const navLinks = document.querySelectorAll('nav a, .navbar a');
+    navLinks.forEach(link => {
+        link.style.transition = 'transform 0.2s ease, color 0.2s ease';
+        link.addEventListener('mouseenter', () => link.style.transform = 'scale(1.1)');
+        link.addEventListener('mouseleave', () => link.style.transform = 'scale(1.0)');
+    });
+});

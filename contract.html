@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Kay and Kay Student Living</title>
+    <meta http-equiv="refresh" content="0; url=contact.html">
     <link rel="stylesheet" href="styles.css/style.css">
+    <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script src="JavaScript/email.js"></script>
 </head>
 <body>
 
@@ -17,14 +20,14 @@
         <a href="index.html">Home</a>
         <a href="about.html">About Us</a>
         <a href="services.html">Services</a>
-        <a href="contract.html">Contact Us</a>
+        <a href="contact.html">Contact Us</a>
     </nav>
 
     <div class="contact-container">
         <h2 style="text-align: center;">Get In Touch</h2>
         <p style="text-align: center; margin-bottom: 25px;">Have a question about our rooms or want to book a viewing? Drop us a message below.</p>
         
-        <form action="#">
+        <form action="#" id="contactForm" novalidate>
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Enter your name" required>
             
